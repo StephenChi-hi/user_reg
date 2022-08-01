@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Html CRUD with Pure JavaScript
+    </title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    
+        <header>
+            <h1>Register New Users</h1> <br> 
+        
+                <form id="user-form" onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+                        <label class="validation-error hide" id="fullNameValidationError"></label>
+                        <input type="text" name="fullName" id="fullName" placeholder="Full Name">
+                        <input type="text" name="department" id="department" placeholder="Department">
+                        <input type="text" name="level" id="level" placeholder="Level">
+                        <input type="email" name="email" id="email" placeholder="Email">
+                        <input id="submit" type="submit" value="Submit">
+                </form>
+
+        </header>
+            <div class="container">
+
+                <h2>Registed Users</h2>
+    <table>  
+                <table class="list" id="user-list">
+                    <thead>
+                        <tr>
+                            <th>Full Name</th>
+                            <th>Department</th>
+                            <th>Level</th>
+                            <th>Email</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody class="output">
+
+                    </tbody>
+                </table>
+
+<button >
+
+</button>
+</div>
+    <script src="appi6.js"></script>
+</body>
+
+</html>
