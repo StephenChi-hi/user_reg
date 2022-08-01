@@ -98,6 +98,7 @@ class Users {
           level = document.getElementById('level').value,
           email = document.getElementById('email').value
           
+          
     
     // Instantiate user
     const user = new Users(fullName, department, level, email);
@@ -117,6 +118,9 @@ class Users {
       
       // Error alert
       alert('Please fill in all fields or email taken', 'error');
+
+      target.parentElement.parentElement.remove();
+
     } else {
       // Add user to list
       ui.addUserToList(user);
@@ -128,6 +132,7 @@ class Users {
       ui.clearFields();
 
     }
+    
       // Add user to list
       ui.addUserToList(user);
   
@@ -137,7 +142,9 @@ class Users {
       // Clear fields
       ui.clearFields();
     
-  
+      //reset form
+      document.getElementById("user-form").reset();
+
     e.preventDefault();
   });
 
@@ -164,6 +171,7 @@ class Users {
     document.getElementById("department").value = selectedRow.cells[1].innerHTML;
     document.getElementById("level").value = selectedRow.cells[2].innerHTML;
     document.getElementById("email").value = selectedRow.cells[3].innerHTML;
+    td.parentElement.parentElement.remove();
 }
 
 function checkEmail(email) {
@@ -176,5 +184,12 @@ function checkEmail(email) {
     Store.removeUser(e.target.parentElement.previousElementSibling.textContent);
    }
   })
+}
+
+function clearForm(){
+    document.getElementById('fullName').value = '';
+    document.getElementById('depertment').value = '';
+    document.getElementById('level').value = '';
+    document.getElementById('email').value = '';
 }
 
