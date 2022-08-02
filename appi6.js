@@ -92,6 +92,7 @@ class Users {
   
   // Event Listener for add user
   document.getElementById('user-form').addEventListener('submit', function(e){
+    
     // Get form values
     const fullName = document.getElementById('fullName').value,
           department = document.getElementById('department').value,
@@ -105,7 +106,6 @@ class Users {
     
     //email check
     checkEmail(email)
-    
     
     // Instantiate UI
     const ui = new UI();
@@ -180,16 +180,7 @@ function checkEmail(email) {
   usersx.forEach(function(user){
    if(user.email === email) {
     alert('email already exsit')
-    ui.deleteUser(e.target);
     Store.removeUser(e.target.parentElement.previousElementSibling.textContent);
    }
   })
 }
-
-function clearForm(){
-    document.getElementById('fullName').value = '';
-    document.getElementById('depertment').value = '';
-    document.getElementById('level').value = '';
-    document.getElementById('email').value = '';
-}
-
