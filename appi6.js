@@ -112,13 +112,11 @@ class Users {
   
     console.log(ui);
    
-
     // Validate
     if(fullName === '' || department === '' || level === '' || email === '') {
-      
+      e.preventDefault();
       // Error alert
       alert('Please fill in all fields or email taken', 'error');
-
       target.parentElement.parentElement.remove();
 
     } else {
@@ -131,19 +129,10 @@ class Users {
       // Clear fields
       ui.clearFields();
 
-    }
-    
-      // Add user to list
-      ui.addUserToList(user);
-  
-      // Add to LS
-      Store.addUsers(user);
-      
-      // Clear fields
-      ui.clearFields();
-    
       //reset form
       document.getElementById("user-form").reset();
+
+    }
 
     e.preventDefault();
   });
